@@ -72,7 +72,7 @@
     
     <xs:complexType name="bookInstanceType">
         <xs:sequence>
-            <xs:element name="inventoryNumber" type="xs:long"></xs:element>
+            <xs:element name="inventoryNo" type="xs:long"></xs:element>
             <xs:element name="bookISBN" type="xs:IDREF"></xs:element>
             <xs:element name="isLoaned" type="xs:boolean"></xs:element>
         </xs:sequence>
@@ -80,7 +80,6 @@
     
     <xs:simpleType name="borrowStatusType" final="restriction">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="REQUESTED"></xs:enumeration>
             <xs:enumeration value="BORROWED"></xs:enumeration>
             <xs:enumeration value="RETURNED"></xs:enumeration>
             <xs:enumeration value="EXPIRED"></xs:enumeration>
@@ -94,7 +93,7 @@
             <xs:element name="expirationDate" type="xs:date"></xs:element>
             <xs:element name="status" type="borrowStatusType"></xs:element>
             <xs:element name="readerID" type="xs:IDREF"></xs:element>
-            <xs:element name="bookInstanceInventoryNumber" type="xs:IDREF"></xs:element>
+            <xs:element name="bookInstanceInventoryNo" type="xs:IDREF"></xs:element>
         </xs:sequence>
     </xs:complexType>
     
@@ -159,7 +158,7 @@
             <xs:field xpath="."></xs:field>
         </xs:key>
         <xs:key name="bookInstanceKey">
-            <xs:selector xpath="bookInstanceType/inventoryNumber"></xs:selector>
+            <xs:selector xpath="bookInstanceType/inventoryNo"></xs:selector>
             <xs:field xpath="."></xs:field>
         </xs:key>
         <xs:key name="borrowingKey">
@@ -171,7 +170,7 @@
             <xs:field xpath="."></xs:field>
         </xs:keyref>
         <xs:keyref refer="bookInstanceKey" name="borrowingToInstanceRef">
-            <xs:selector xpath="borrowingType/bookInstanceInventoryNumber"></xs:selector>
+            <xs:selector xpath="borrowingType/bookInstanceInventoryNo"></xs:selector>
             <xs:field xpath="."></xs:field>
         </xs:keyref>
         <xs:keyref refer="userKey" name="readerToUserRef">
