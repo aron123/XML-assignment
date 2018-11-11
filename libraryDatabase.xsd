@@ -3,8 +3,9 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" >
     <xs:complexType name="passwordType">
         <xs:sequence>
-            <xs:element name="hashedPassword" type="xs:string"></xs:element>
+            <xs:element name="hash" type="xs:string"></xs:element>
         </xs:sequence>
+        <xs:attribute name="salt" type="xs:string"></xs:attribute>
     </xs:complexType>
     
     <!-- empty element -->
