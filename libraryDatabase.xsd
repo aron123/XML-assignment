@@ -30,7 +30,6 @@
                     <xs:element name="id" type="xs:ID"></xs:element>
                     <xs:element name="username" type="xs:string"></xs:element>
                     <xs:element name="password" type="passwordType"></xs:element>
-                    <xs:element name="info" type="personInformation"></xs:element>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -73,7 +72,7 @@
     
     <xs:complexType name="bookInstanceType">
         <xs:sequence>
-            <xs:element name="inventoryNo" type="xs:long"></xs:element>
+            <xs:element name="inventoryNo" type="xs:ID"></xs:element>
             <xs:element name="bookISBN" type="xs:IDREF"></xs:element>
             <xs:element name="isLoaned" type="xs:boolean"></xs:element>
         </xs:sequence>
