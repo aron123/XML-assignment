@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<database>
+    <users>
+        <user>
+            <name>Toth Ferenc</name>
+            <email>tf@example.com</email>
+            <mobileNumber>06301234567</mobileNumber>
+            <image src="https://example.com/img1.jpg"/>
+            <id>ID-1</id>
+            <username>tf</username>
+            <password>
+                <hash>$2a$04$Pd3yH9dGEf6UTZli5s2M2O3.10rx0rJKDSSwuZjidZ6Tepch.agGm</hash>
+            </password>
+        </user>
+        <user>
+            <name>Kovacs Lajos</name>
+            <email>kl@example.com</email>
+            <mobileNumber>06307654321</mobileNumber>
+            <image src="http://img.example.com/img.png"/>
+            <id>ID-2</id>
+            <username>kovla</username>
+            <password>
+                <hash>$2a$04$7I0jg853YVVp8VDf1u6.fubfuNJ0D7bAmuHTAZddHEQyN1sS8cJi2</hash>
+            </password>
+        </user>
+        <user>
+            <name>Nagy Geza</name>
+            <email>nagy@example.com</email>
+            <mobileNumber>06201236547</mobileNumber>
+            <image src="https://google.com/logo.png"/>
+            <id>ID-3</id>
+            <username>nagyg</username>
+            <password>
+                <hash>$2a$04$qM38KQNWMym.FCY4k9zK4eS/RXUVCg1XVfPLvfDdW20U0CzMu5ZzW</hash>
+            </password>
+        </user>
+    </users>
+    <librarians>
+        <librarian>
+            <employeeID>ID-4</employeeID>
+            <salary>125000</salary>
+            <userID>ID-1</userID>
+        </librarian>
+        <librarian>
+            <employeeID>ID-5</employeeID>
+            <salary>250000</salary>
+            <userID>ID-2</userID>
+        </librarian>
+    </librarians>
+    <readers>
+        <reader>
+            <id>ID-6</id>
+            <userID>ID-1</userID>
+        </reader>
+        <reader>
+            <id>ID-7</id>
+            <userID>ID-3</userID>
+        </reader>
+    </readers>
+    <books>
+        <book>
+            <ISBN>ISBN-12345678</ISBN>
+            <author>Pasztor Imre</author>
+            <title>Analizis 8.</title>
+            <publishYear>2017</publishYear>
+            <genre>Scifi</genre>
+        </book>
+        <book>
+            <ISBN>ISBN-87654321</ISBN>
+            <author>Toth Palne</author>
+            <title>OS vizsga elsore</title>
+            <publishYear>2016</publishYear>
+            <genre>Fiction</genre>
+        </book>
+    </books>
+    <bookInstances>
+        <bookInstance>
+            <inventoryNo>IN-123456</inventoryNo>
+            <bookISBN>ISBN-12345678</bookISBN>
+            <isLoaned>true</isLoaned>
+        </bookInstance>
+        <bookInstance>
+            <inventoryNo>IN-123457</inventoryNo>
+            <bookISBN>ISBN-12345678</bookISBN>
+            <isLoaned>false</isLoaned>
+        </bookInstance>
+        <bookInstance>
+            <inventoryNo>IN-123458</inventoryNo>
+            <bookISBN>ISBN-12345678</bookISBN>
+            <isLoaned>false</isLoaned>
+        </bookInstance>
+        <bookInstance>
+            <inventoryNo>IN-1234569</inventoryNo>
+            <bookISBN>ISBN-87654321</bookISBN>
+            <isLoaned>true</isLoaned>
+        </bookInstance>
+    </bookInstances>
+    <borrowings>
+        <borrowing>
+            <id>ID-8</id>
+            <creationDate>2016-01-26</creationDate>
+            <expirationDate>2016-03-21</expirationDate>
+            <status>EXPIRED</status>
+            <readerID>ID-6</readerID>
+            <bookInstanceInventoryNo>IN-123456</bookInstanceInventoryNo>
+        </borrowing>
+        <borrowing>
+            <id>ID-9</id>
+            <creationDate>2017-01-23</creationDate>
+            <expirationDate>2017-01-25</expirationDate>
+            <status>RETURNED</status>
+            <readerID>ID-6</readerID>
+            <bookInstanceInventoryNo>IN-1234569</bookInstanceInventoryNo>
+        </borrowing>
+        <borrowing>
+            <id>ID-10</id>
+            <creationDate>2018-01-26</creationDate>
+            <expirationDate>2018-05-11</expirationDate>
+            <status>BORROWED</status>
+            <readerID>ID-7</readerID>
+            <bookInstanceInventoryNo>IN-1234569</bookInstanceInventoryNo>
+        </borrowing>
+    </borrowings>
+</database>
