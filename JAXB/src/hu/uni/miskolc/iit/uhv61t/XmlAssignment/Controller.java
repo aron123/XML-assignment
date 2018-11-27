@@ -123,13 +123,15 @@ class Controller {
      */
     void deleteBook (String isbnToSearch) throws JAXBException {
         Collection<BookType> books = this.database.getBooks().getBook();
+        BookType found = null;
 
         for (BookType book : books) {
             if (book.getISBN().equals(isbnToSearch)) {
-                books.remove(book);
+                found = book;
             }
         }
 
+        books.remove(found);
         this.writeOutChanges();
     }
 }
